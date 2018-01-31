@@ -4,17 +4,14 @@
   <title>テスト</title>
   <script type="text/javascript" src="enchant.js-builds-0.8.3-b/build/enchant.js"></script>
   <script type="text/javascript" src="dispText.js"></script>
+  <script type="text/javascript" src="baseScene.js"></script>
   <script type="text/javascript">
     window.onload = function() {
       var core = new Core(450, 300);
       core.preload('enchant.js-builds-0.8.3-b/images/chara1.png');
       core.preload('仕事場背景.jpg');
       core.onload = function() {
-        var text = new TextWindow(this.width, this.height);
-        var bgImage = new Sprite(450, 300);
-        bgImage.image = core.assets['仕事場背景.jpg'];
-        core.rootScene.addChild(bgImage);
-        core.rootScene.addChild(text);
+        core.replaceScene(new BaseScene(core.assets['仕事場背景.jpg'], this.width, this.height));
       }
       core.fps = 15;
       core.start();

@@ -36,13 +36,17 @@ class Text extends Label {
     this.y = y;
     this.text = '';
     this.color = color;
-    var dispText = text;
-    var dispSize = dispText.length;
+    this.dispText = text;
+    this.clickable = false;
+    var dispSize = this.dispText.length;
     var textIndex = 0;
     this.onenterframe = function (){
       if (this.text.length < dispSize) {
-        this.text += dispText.substring(textIndex, textIndex + 1);
+        this.text += this.dispText.substring(textIndex, textIndex + 1);
         textIndex++;
+        if (this.text.length == dispSize) {
+          this.clickable = true;
+        }
       }
     }
   }

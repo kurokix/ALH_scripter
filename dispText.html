@@ -5,13 +5,14 @@
   <script type="text/javascript" src="enchant.js-builds-0.8.3-b/build/enchant.js"></script>
   <script type="text/javascript" src="dispText.js"></script>
   <script type="text/javascript" src="baseScene.js"></script>
+  <script type="text/javascript" src="OfficeRoomScene.js"></script>
   <script type="text/javascript">
     window.onload = function() {
       var core = new Core(450, 300);
       core.preload('enchant.js-builds-0.8.3-b/images/chara1.png');
       core.preload('仕事場背景.jpg');
       core.onload = function() {
-        core.replaceScene(new BaseScene(core.assets['仕事場背景.jpg'], this.width, this.height));
+        var baseScene = new OfficeRoomScene(core, this.width, this.height);
       }
       core.fps = 15;
       core.start();

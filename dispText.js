@@ -14,7 +14,7 @@ class TextWindow extends Group {
     sheet.backgroundColor = 'white';
     sheet.opacity = 0.7; // 透明度
     // テキスト設定
-    var text = new Text(0,0, 'じゃぶじゃぶ課金したくなるような射幸心を煽る文章', 'black');
+    var text = new Text(0,0, '', 'black');
     text.width = width;
 
     this.addChild(sheet);
@@ -37,7 +37,7 @@ class Text extends Label {
     this.text = '';
     this.color = color;
     this.dispText = text;
-    this.clickable = false;
+    this.clickable = true;
     var dispSize = this.dispText.length;
     var textIndex = 0;
     this.onenterframe = function (){

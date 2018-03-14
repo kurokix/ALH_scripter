@@ -2,9 +2,9 @@ class BaseScene extends Scene {
 
   constructor(core, width, height)　{
     super();
+
     // 背景定義
     var sceneImage = new Sprite(width, height);
-    sceneImage.image = core.assets['仕事場背景.jpg'];
 
     // テキストウィンドウ定義
     var sceneText = new TextWindow(width, height);
@@ -45,7 +45,6 @@ class BaseScene extends Scene {
 
     this.addChild(sceneImage);　// 背景画像セット
     this.addChild(sceneText); // テキストウィンドウセット
-    core.replaceScene(this);　// シーン差し替え
   }
 
   // 抽象メソッド
